@@ -6,10 +6,7 @@ const Card = (props) => {
 	const styles = {
 		backgroundColor: props.cardColor,
 		height: props.height,
-		width: props.width,
-		borderWidth: props.borderWidth,
-		borderColor: props.borderColor
-
+		width: props.width
 	}
 	return (
 		<div style={styles}>
@@ -21,14 +18,14 @@ const Card = (props) => {
 
 Card.defaultProps = {
 	cardColor: "blue",
-	height: 100,
-	width: 100,
-	borderWidth: 20,
-	borderColor: "pink"
+	height: 500,
+	width: 100
 }
 
 Card.propTypes = {
-	cardColor: PropTypes.string.isRequired
+	//cardColor: PropTypes.string.isRequired --one example
+	//this bottom one will require the colors to be only what is stated inside the array
+	cardColor: PropTypes.oneOf(["red", "pink", "purple"])
 }
 //can you the validator of isRequired to require something
 
