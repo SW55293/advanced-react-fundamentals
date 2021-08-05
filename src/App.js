@@ -1,14 +1,14 @@
 //table of contents
 import React from 'react'
 //import Introduction from './Intro/AppIntro'
-import Reusability from './Reusability/AppReuse'
+//import Reusability1 from './Reusability/AppReuse-1'
 
 
 const App = () => {
 return (
   <div>
   {/* <Introduction /> */}
-  <Reusability />
+  {/* <Reusability1 /> */}
   </div>
 
 )

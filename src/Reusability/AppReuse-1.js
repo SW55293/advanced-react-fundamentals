@@ -1,10 +1,10 @@
 import React from 'react'
 //import CTA from './CTA'
-import InfoCallout from './Callout/InfoCallout'
-import ImageCallout from './Callout/ImageCallout'
-import EmailCallout from './Callout/EmailCallout'
+import InfoCallout from './Callouts/InfoCallout'
+import ImageCallout from './Callouts/ImageCallout'
+import EmailCallout from './Callouts/EmailCallout'
 
-import RegularCallout from './Callout/RegularCallout'
+import RegularCallout from './Callouts/RegularCallout'
 
 const AppReuse = () => {
 	return (
