@@ -1,6 +1,7 @@
 import React from 'react'
 //import HighOrderPractice from './HighOrderComp/HighOrderPractice'
-import HighOrderToggle from './HighOrderComp/HighOrder2'
+import HToggle from './HighOrderComp/HighOrder2'
+import HToggle2 from './HighOrderComp/HighOrder2Menu'
 
 function AppReuse2(props) {
 	return (
@@ -9,4 +10,4 @@ function AppReuse2(props) {
 	)
 }
 
-export default HighOrderToggle(AppReuse2)
+export default AppReuse2

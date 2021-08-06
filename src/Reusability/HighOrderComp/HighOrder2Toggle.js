@@ -6,7 +6,7 @@ import React from 'react'
 const ContainsToggler = (component) => {
 	return function(props) {
 		return (
-			<Toggler />
+			<Toggler component={component} {...props}/>
 		)
 	}
 }
