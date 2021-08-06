@@ -11,3 +11,5 @@ function AppReuse2(props) {
 }
 
 export default AppReuse2
+
+//created another App function to export it without all the clutter of the other one
