@@ -19,8 +19,9 @@ const AppReuse2 = (props) => {
 		<div>
 			{/* array return */}
 			<Render1 nameArray={["steph ", "dog ", "tree "]}/> 
-			{/* function return */}
-			<Render1 func={function() {return "this is a fucntion"}}/>
+			
+			{/* function return...not really working well */}
+			<Render1 func={function() {return "this is a function"}}/>
 		</div>
 	)
 }
