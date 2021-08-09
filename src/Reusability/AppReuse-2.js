@@ -1,12 +1,20 @@
 import React from 'react'
 //import HighOrderPractice from './HighOrderComp/HighOrderPractice'
-import HToggle from './HighOrderComp/HighOrder2'
-import HToggle2 from './HighOrderComp/HighOrder2Menu'
+import Favorite from './HighOrderComp/HighOrder2'
+import Menu from './HighOrderComp/HighOrder2Menu'
+import Menu2 from './HighOrderComp/MyMenuPractice'
 
-function AppReuse2(props) {
+const AppReuse2 = (props) => {
 	return (
 
-		<div>Hello Everyone {props.faveNum}</div>
+		<div>
+			<Favorite />
+			<hr /> 
+			{/* hr = horizontal line break */}
+			<Menu />
+			<hr /> 
+			<Menu2 />
+		</div>
 	)
 }
 

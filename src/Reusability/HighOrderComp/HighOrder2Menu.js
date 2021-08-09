@@ -1,33 +1,21 @@
 import React from "react"
 import HighOrderToggle from './HighOrder2Toggle'
 
-class Menu extends Component {
-    state = {
-        show: true
-    }
-    
-    toggleShow = () => {
-        this.setState(prevState => {
-            return {
-                show: !prevState.show
-            }
-        })
-    }
-    
-    render() {
+function Menu(props) {
+ 
         return (
             <div>
-                <button onClick={this.toggleShow}>{this.state.show ? "Hide" : "Show"} Menu </button>
-                <nav style={{display: this.state.show ? "block" : "none"}}>
+                <button onClick={props.toggle}>{props.on ? "Hide" : "Show"} Menu </button>
+                <nav style={{display: props.on ? "block" : "none"}}>
                     <h6>Signed in as Coder123</h6>
-                    <a>Your Profile</a>
-                    <a>Your Repositories</a>
-                    <a>Your Stars</a>
-                    <a>Your Gists</a>
+                    <a href="https://www.google.com">Your Profile</a>
+                    <a href="https://www.google.com">Your Repositories</a>
+                    <a href="https://www.google.com">Your Stars</a>
+                    <a href="https://www.google.com">Your Gists</a>
                 </nav>
             </div>
-        ) 
-    }
+        )
+    
 }
 
-export default HighOrderToggle(Menu)
+export default HighOrderToggle(Menu, {defaultOnValue: true})
