@@ -8,16 +8,15 @@ class Toggler extends Component {
 	}
 
 	toggle = () => {
-		this.setState(prevState => {
-			return {
-				on: !prevState.on
-			}
-		})
+		this.setState(prevState => ({on: !prevState.on}))
 	}
 	render() {
 		return (
 			<div>
-				{this.props.render(this.state.on, this.state.toggle)}
+				{this.props.render({
+					on: this.state.on,
+					toggle: this.state.toggle 
+					})}
 			</div>
 		)
 	}
@@ -32,11 +31,10 @@ export default Toggler
 
 // ******* Favorite *******
 // Need to have an import for Toggler
-const Favorite = () => {
+const Favorite = (props) => {
 
-	return (
-		<Toggler render={
-			(on, toggle) => (
+
+		<Toggler defaultOnValue={false} render={ ({on, toggle}) => (
 				<div>
 					<h3>Click heart to favorite</h3>
 					<h1>
@@ -50,7 +48,7 @@ const Favorite = () => {
 
 			)
 		} />
-	)
+
 
 
 
@@ -64,8 +62,7 @@ export default Favorite
 
 const Menu = () => {
 
-	<Toggler render= {
-		(on, toggle) => (
+	<Toggler defaultOnValue={true} render= { ({on, toggle}) => (
 			<div>
 			<button onClick={toggle}>{on ? "Hide" : "Show"} Menu </button>
 			<nav style={{ display: on ? "block" : "none" }}>
@@ -85,3 +82,7 @@ const Menu = () => {
 }
 
 export default Menu
+
+
+// Props were being passed to all the child components so favorite and menu
+// although i'm unsure if it is needed. This is something i'll have to test
