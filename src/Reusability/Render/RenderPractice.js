@@ -10,7 +10,11 @@ const RenderPractice = (props) => {
 
 			{props.nameArray}
 
-			<h3>Hello there {props.func}</h3>
+			{/* Hello there {props.func("Stephanie")} */}
+			{/* pass in a name into the function for #3 in appreuse2*/}
+
+			{props.func(true)}
+			{/* example with a boolean variable */}
 
 		</div>
 	)
