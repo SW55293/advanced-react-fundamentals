@@ -23,10 +23,17 @@ const AppReuse2 = (props) => {
 			{/* 1 = <Render1 func={function() {return "this is a function"}}/> */}
 			{/* 2 = <Render1 func={function() {return <h1>"this is a function"</h1>}}/> */}
 			{/* 3 = <Render1 func={function(name) {return <h1>Hey {name}</h1>}}/> */}
-			<Render1 func={
+			{/* <Render1 func={
 				function (isCool) {
 					return (
-						<h1>{isCool ? " Stephanie is Cool" : "She Sucks!"}</h1>
+						<h1>Stephanie, {isCool ? "is Cool" : "Sucks!"}</h1>
+					)
+				}
+			} /> */}
+			<Render1 name={
+				function(number) {
+					return (
+						<h1>{number > 0 ? "0 and greater" : "Less than 0"}</h1>
 					)
 				}
 			} />

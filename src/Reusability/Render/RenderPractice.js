@@ -13,8 +13,10 @@ const RenderPractice = (props) => {
 			{/* Hello there {props.func("Stephanie")} */}
 			{/* pass in a name into the function for #3 in appreuse2*/}
 
-			{props.func(true)}
+			{/* {props.func(false)} */}
 			{/* example with a boolean variable */}
+
+			{props.name(29)}
 
 		</div>
 	)
