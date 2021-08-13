@@ -2,7 +2,8 @@
 import React from 'react'
 //import Introduction from './Intro/AppIntro'
 //import Reusability1 from './Reusability/AppReuse-1'
-import Reusability2 from './Reusability/AppReuse-2'
+//import Reusability2 from './Reusability/AppReuse-2'
+import Reusability3 from './Reusability/AppReuse-3'
 
 
 const App = () => {
@@ -10,7 +11,7 @@ return (
   <div>
   {/* <Introduction /> */}
   {/* <Reusability1 /> */}
-  <Reusability2 />
+  <Reusability3 />
   </div>
 
 )
