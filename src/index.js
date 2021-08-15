@@ -6,10 +6,10 @@ import ThemeContext from './React-Context/themeContext'
 
 
 ReactDOM.render(
-	<ThemeContext.Provider value={"Stephanie"}>
+	<ThemeContext.Provider value={"dark"}>
 	<App />
 	</ThemeContext.Provider>,
-	//  <ThemeContext.Provider value={"light"}>
+	//  <ThemeContext.Provider value={"Stephanie"}>
 	// <App />
 	// </ThemeContext.Provider>,
 	document.getElementById("root")
