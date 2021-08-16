@@ -3,7 +3,7 @@ import Button from './Context-Provider/Button'
 import Header from './Context-Provider/Header'
 import './Context-Provider/styles.css'
 
-import {ThemeContextConsumer} from './themeContext'
+//import {ThemeContextConsumer} from './themeContext'
 
 
 
@@ -11,11 +11,11 @@ const App = () => {
 	return (
 		<div>
 			<Header />
-			<ThemeContextConsumer>
+			{/* <ThemeContextConsumer>
 				{theme => (
 					<Button theme={theme}/>
 				)}
-			</ThemeContextConsumer>
+			</ThemeContextConsumer> */}
 			<Button theme="light"/>
 
 		

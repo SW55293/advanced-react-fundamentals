@@ -7,12 +7,13 @@ function Header (props) {
 			
 			<div>
 				<ThemeContextConsumer>
-					{(theme, name) => (
-						<header className={`${theme}-theme`}>
-						<h2>{theme === "light" ? "Light Theme" : "Dark Theme"}</h2>
+					{context => (
+						<header className={`${context.theme}-theme`}>
+						<h2>{context.theme === "light" ? "Light Theme" : "Dark Theme"}</h2>
 						
-						<h3 className="h3-tag">Welcome Back, {`${name}`}</h3>
-						<h3 className="h3-tag">Welcome Back, {name}</h3>
+						{/* Both ways work to pass name */}
+						<h3 className="h3-tag">Welcome Back, {`${context.name}`}</h3>
+						<h3 className="h3-tag">Welcome Back, {context.name}</h3>
 					</header>
 
 					)}
