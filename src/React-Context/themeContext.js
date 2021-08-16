@@ -4,7 +4,8 @@ const {Provider, Consumer} = React.createContext()
 class ThemeContextProvider extends Component {
 	state = {
 		theme: "dark",
-		name: "Stephanie"
+		placeholder: "User",
+		username: "bb"
 	}
 
 	toggleTheme = () => {
@@ -14,11 +15,23 @@ class ThemeContextProvider extends Component {
 			}
 		})
 	}
+
+	changeUsername = (username) => {
+		this.setState({username})
+	}
 	 render() {
 		 return (
-			 <Provider value={{theme: this.state.theme, toggleTheme: this.toggleTheme, name: this.state.name}} >
-				 {this.props.children}
+			 <Provider value={{
+				 theme: this.state.theme,
+				  toggleTheme: this.toggleTheme,
+				   placeholder: this.state.placeholder,
+				    username: this.state.username,
+					 changeUsername: this.changeUsername
+				   }} >
+				
 				 {/* <button onClick={this.toggleTheme} >Switch the theme</button> */}
+				
+					{this.props.children}
 			 </Provider>
 		 )
 	 }

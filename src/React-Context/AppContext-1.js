@@ -2,6 +2,7 @@ import React from 'react'
 import Button from './Context-Provider/Button'
 import Header from './Context-Provider/Header'
 import './Context-Provider/styles.css'
+import Username from './Context-Provider/Username'
 
 //import {ThemeContextConsumer} from './themeContext'
 
@@ -17,6 +18,7 @@ const App = () => {
 				)}
 			</ThemeContextConsumer> */}
 			<Button theme="light"/>
+			<Username/>
 
 		
 

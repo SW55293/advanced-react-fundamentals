@@ -11,7 +11,12 @@ function Button(props) {
 			If I want to change it just un-comment */}
 			<ThemeContextConsumer>
 				{context => (
+					<>
 					<button onClick={context.toggleTheme} className={`${context.theme}-theme`}>Switch</button>
+					<h3>No new notifications, {context.name}</h3>
+					<br></br>
+					
+					</>
 				)}
 			</ThemeContextConsumer>
 			

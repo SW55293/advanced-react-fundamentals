@@ -1,14 +1,42 @@
 import React from 'react'
-//import UserNameContext from '../userNameContext'
+import {ThemeContextConsumer} from '../themeContext'
 
-function Username (props) {
-	  
+class Username extends React.Component {
+	state = {
+		newUsername: ""
+	}
+
+	
+	handleChange = (e) => {
+		const {name, value} = e.target
+		this.setState({[name]: value})
+	}
+
+	  render() {
         return (
-			<div>
-				<p>Welcome back, {props.name}</p>
-			</div>
 			
-        )    
+				<ThemeContextConsumer>
+				{({username, changeUsername}) => (
+					<div>
+					<h1>Welcome back, {username}</h1>
+					
+				<h4>Change your Username</h4>
+				<input
+					type="text"
+					name="newUsername"
+					placeholder="USername"
+					value={this.state.newUsername}
+					onChange={this.handleChange}
+				/>
+				<button onClick={() => changeUsername(this.state.newUsername)}>Change Username</button>
+				</div>
+				)}
+				</ThemeContextConsumer>
+				
+			
+			
+        )  
+		}  
     
 }
 
