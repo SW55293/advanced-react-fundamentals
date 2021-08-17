@@ -1,10 +1,11 @@
-import React, {useState} from 'react'
+import React from 'react'
+import Use from './useState'
 
 const App = () => {
-	const value = useState("pig")
+	
 	return (
 		<div>
-			<h1>Hello there, {value[0]}</h1>
+			<Use />
 		</div>
 	)
 }
