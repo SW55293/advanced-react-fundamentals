@@ -15,14 +15,22 @@ const useEffectApp = () => {
 	}
 
 	useEffect(() => {
-		// if you want to run useEffect at a specific interval ue the below
-		setInterval(() => {
+		setColor(randomcolor())
+	}, [count])
+
+// if you want to run useEffect at a specific interval use the below //////
+//you can change the interval time to your preference
+/*
+	useEffect(() => {
+		const intervalID = setInterval(() => {
 			setCount(prevCount => prevCount + 1)
 		}, 100)
-
-		setColor(randomcolor())
-
-	}, [count])
+		//cleanup function...sorta like cache clean up
+		return () => {
+			cleanInterval(intervalID)
+		}
+	}, [])
+	*/
 
 	return (
 		<div>
