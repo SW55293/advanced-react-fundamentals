@@ -1,12 +1,13 @@
 import React from 'react'
 //import Use from './useState'
-import Use from './useEffect'
+import './Typing-Game/gameStyling.css'
+import Game from './Typing-Game/Main'
 
 const App = () => {
 	
 	return (
 		<div>
-			<Use />
+			<Game />
 		</div>
 	)
 }
