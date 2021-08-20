@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 const Main = () => {
 
@@ -6,6 +6,7 @@ const Main = () => {
 	const [timeLeft, setTimeLeft] = useState(5)
 	const [isTimeRunning, setTimeRunning] = useState(false)
 	const [countedWordz, setCountedWordz] = useState(0)
+	const inputRef = useRef(null)
 
 	const handleChange = (e) => {
 		const { value } = e.target
@@ -15,6 +16,7 @@ const Main = () => {
 	function WordCount(text) {
 		const words = text.trim().split(" ")
 		//console.log(words)
+		
 		return words.filter(word => word !== "").length
 	}
 
@@ -22,6 +24,8 @@ const Main = () => {
 		setTimeRunning(true)
 		setTimeLeft(5)
 		setText("")
+		inputRef.current.disabled = false
+		inputRef.current.focus()
 	}
 
 
@@ -37,7 +41,7 @@ const Main = () => {
 		// eslint-disable-next-line
 	}, [timeLeft, isTimeRunning])
 
-	const endOfGame = () => {
+	function endOfGame() {
 		setTimeRunning(false)
 		const numWordz = WordCount(text)
 		setCountedWordz(numWordz)
@@ -50,6 +54,7 @@ const Main = () => {
 		<div>
 			<h1>How fast do you type?</h1>
 			<textarea
+				ref={inputRef}
 				onChange={handleChange}
 				value={text}
 				disabled={!isTimeRunning}
