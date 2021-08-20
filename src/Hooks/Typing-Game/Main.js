@@ -36,12 +36,12 @@ const Main = () => {
 				setTimeLeft(time => time - 1)
 			}, 1000)
 		} else if (isTimeRunning === 0) {
-			endOfGame()
+			endOfGame(text)
 		}
 		// eslint-disable-next-line
 	}, [timeLeft, isTimeRunning])
 
-	function endOfGame() {
+	function endOfGame(text) {
 		setTimeRunning(false)
 		const numWordz = WordCount(text)
 		setCountedWordz(numWordz)

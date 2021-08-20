@@ -39,8 +39,9 @@ function App() {
                 setTimeRemaining(time => time - 1)
             }, 1000)
         } else if(timeRemaining === 0) {
-            endGame()
+            endGame(text)
         }
+		// eslint-disable-next-line
     }, [timeRemaining, isTimeRunning])
     
     return (
