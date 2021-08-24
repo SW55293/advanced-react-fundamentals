@@ -34,7 +34,7 @@ one way to pass components in the route
 use the below if you need to pass props
 
 ----Version 1
-<Route exact path="/" render={() => <Home />} />
+<Route exact path="/" render={(props) => <Home />} />
 <Route path="/about" render={() => <About />} />
 <Route path="/profile" render={() => <Profile />} />
 
