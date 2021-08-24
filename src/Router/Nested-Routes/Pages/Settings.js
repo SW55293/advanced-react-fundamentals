@@ -3,7 +3,7 @@ import React from 'react'
 function ProfileSettings() {
     return (
         <section>
-            <h1>Profile settings</h1>
+            <h1>Your settings</h1>
             <input type="password"/>
             <button>Change</button>
         </section>

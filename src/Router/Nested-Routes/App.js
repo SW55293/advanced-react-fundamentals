@@ -6,6 +6,10 @@ import Profile from './Pages/Profile'
 
 import {Switch, Route} from 'react-router-dom'
 
+// if you want settings and info to take over whole page
+import Info from './Pages/Info'
+import Settings from './Pages/Settings'
+
 function App() {    
     return (
         <div>
@@ -13,7 +17,10 @@ function App() {
             
             <Switch>
                 <Route exact path="/"> <Home /> </Route>
-                <Route path="/profile"> <Profile/> </Route>
+                <Route exact path="/profile"> <Profile/> </Route>
+
+				<Route path="/profile/info"> <Info />  </Route>
+				<Route path="/profile/settings"> <Settings />  </Route>
             </Switch>
             
             <Footer />

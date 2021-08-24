@@ -1,8 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-import Settings from './Settings'
-import Info from './Info'
+// import Settings from './Settings'
+// import Info from './Info'
 
 function Profile() {
     return (
@@ -12,6 +12,13 @@ function Profile() {
                 <li><Link to="/profile/info">Profile Info</Link></li>
                 <li><Link to="/profile/settings">Profile Settings</Link></li>
             </ul>
+
+			{/* <Switch> */}
+				{/* <Route path="/profile/info"> <Info />  </Route> */}
+				{/* <Route path="/profile/settings"> <Settings />  </Route> */}
+				{/* you could also place the 2 routes in app.js and have them take */}
+				{/* over the whole page instead of half the page like they are now */}
+			{/* </Switch> */}
         </div>
     )
 }
