@@ -8,9 +8,11 @@ import Profile from './Profile'
 function App() {
 	return (
 		<div>
+			<nav>
 			<Link to="/">Home Page</Link>
 			<Link to="/about">About Page</Link>
 			<Link to="/profile">Profile Page</Link>
+			</nav>
 
 			<Switch>
 				<Route exact path="/"> <Home /> </Route>
