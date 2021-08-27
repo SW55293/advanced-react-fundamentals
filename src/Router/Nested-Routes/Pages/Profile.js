@@ -11,6 +11,7 @@ function Profile() {
             <ul>
                 <li><Link to="/profile/info">Profile Info</Link></li>
                 <li><Link to="/profile/settings">Profile Settings</Link></li>
+              
             </ul>
 
 			{/* <Switch> */}
