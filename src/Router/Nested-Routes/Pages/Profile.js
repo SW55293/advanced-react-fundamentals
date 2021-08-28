@@ -5,6 +5,8 @@ import {Link} from 'react-router-dom'
 // import Info from './Info'
 
 function Profile() {
+    
+	
     return (
         <div>
             <h1>Profile Page</h1>
@@ -13,7 +15,7 @@ function Profile() {
                 <li><Link to="/profile/settings">Profile Settings</Link></li>
               
             </ul>
-
+       
 			{/* <Switch> */}
 				{/* <Route path="/profile/info"> <Info />  </Route> */}
 				{/* <Route path="/profile/settings"> <Settings />  </Route> */}

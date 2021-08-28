@@ -9,9 +9,9 @@ import {Link} from 'react-router-dom'
 
 function Menu() { 
 	
-	const data = menuInfo.map(options => (
+	const menuData = menuInfo.map(options => (
 		<h3 key={options._id}>
-			<Link to={`/menuId/${options._id}`}>{options.name} </Link>  - ${options.price} </h3>
+			<Link to={`/menuData/${options._id}`}>{options.name} </Link>  - ${options.price} </h3>
 	))
 
 
@@ -24,7 +24,7 @@ function Menu() {
 			width="50%" alt="img-1" />
 			</div>
 	
-			{data}
+			{menuData}
 	  
             {/* yummly.co */}
             

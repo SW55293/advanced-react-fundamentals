@@ -26,7 +26,8 @@ function App() {
 				<Route path="/profile/settings"> <Settings />  </Route>
 
                 <Route path="/menu"> <Menu />  </Route>
-                <Route path="/menu/:menuId"> <Options />  </Route>
+                <Route path="/menu/:menuData"> <Options />  </Route>
+                {/* the above is not rendering and i give up */}
             </Switch>
             
             <Footer />

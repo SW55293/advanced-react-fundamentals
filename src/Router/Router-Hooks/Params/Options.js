@@ -2,17 +2,18 @@ import React from 'react'
 import {useParams} from 'react-router-dom'
 import menuInfo from './useParamData'
 
-const Options = (props) => {
+function Options(props) {
 	
-	const {menuId} = useParams()
-	const options = menuInfo.find(menu => menu._id === menuId)
+	const { menuData } = useParams();
+	const services = menuInfo.find(menu => menu._id === menuData)
 
 
 	return(
 		<div>
 			
-				<h2>These are the values {options.name} - ${options.price}</h2>
-				<p>{options.description}</p>
+				<h2>These are the values</h2>
+				<p> {services.name} - ${services.price}</p>
+				<p>{services.description}</p>
 				
 			
 
@@ -21,3 +22,7 @@ const Options = (props) => {
 }
 
 export default Options
+
+
+// this whole page is not showing up
+// not sure what the hell is up
