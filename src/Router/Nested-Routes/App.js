@@ -3,7 +3,9 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './Pages/Home'
 import Profile from './Pages/Profile'
-import Menu from '../Router-Hooks/useParams'
+
+import Menu from '../Router-Hooks/Params/useParamsExample'
+import Options from '../Router-Hooks/Params/Options'
 
 import {Switch, Route} from 'react-router-dom'
 
@@ -24,6 +26,7 @@ function App() {
 				<Route path="/profile/settings"> <Settings />  </Route>
 
                 <Route path="/menu"> <Menu />  </Route>
+                <Route path="/menu/:menuId"> <Options />  </Route>
             </Switch>
             
             <Footer />
