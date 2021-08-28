@@ -1,5 +1,5 @@
 import React from "react"
-import {Link} from "react-router-dom"
+import {Link, useLocation} from "react-router-dom"
 
 import servicesData from "./servicesData"
 
@@ -9,6 +9,11 @@ function ServicesList() {
             <h3><Link to={`/services/${service._id}`}>{service.name}</Link> - ${service.price}</h3>
         </div>
     ))
+
+    const location = useLocation()
+    console.log(location)
+    //didnt get into it 
+
     return (
         <div>
             <h1>Services List Page</h1>

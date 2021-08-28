@@ -4,7 +4,7 @@ import {BrowserRouter as Router} from 'react-router-dom'
 
 import './Router/Nested-Routes/styles.css'
 //import App from './Router/Nested-Routes/App'
-import App from './Router/Router-Hooks/useHistory/App'
+import App from './Router/Router-Hooks/useHistoryandLocation/App'
 
 ReactDOM.render(
 	<Router>
