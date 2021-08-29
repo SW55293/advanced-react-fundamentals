@@ -3,7 +3,7 @@ import {Link, Switch, Route, Redirect} from 'react-router-dom'
 
 function Redir() {
 	
-	const [isLoggedIn, setLoggedIn] = useState(false)
+	const [isLoggedIn] = useState(false)
 	// we set the log in to false so this hardcodes the state as not logged in
 	return(
 		<div>
