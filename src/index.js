@@ -10,7 +10,7 @@ import {BrowserRouter as Router} from 'react-router-dom'
 //import App from './Router/Section-Challenge/App'
 import App from './Section-Capstone/App'
 import './Section-Capstone/styles.css'
-import ContextProvider, { Context } from './Section-Capstone/Context'
+import  {ContextProvider} from './Section-Capstone/Context'
 
 ReactDOM.render(
 	<ContextProvider>
