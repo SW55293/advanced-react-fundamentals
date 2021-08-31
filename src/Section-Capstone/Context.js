@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
+
 const Context = React.createContext()
 
 function ContextProvider({ children }) {
 	const [allImgs, setImgs] = useState([])
 
 	const url = "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
-
+	
 	useEffect(() => {
 		//get the data from api(fetch images)
 		fetch(url)
@@ -15,7 +16,7 @@ function ContextProvider({ children }) {
 			.then(data => setImgs(data))
 
 	}, [])
-	console.log(allImgs)
+	//console.log(allImgs)
 
 
 
