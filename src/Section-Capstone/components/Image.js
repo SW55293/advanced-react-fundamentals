@@ -1,8 +1,22 @@
-import React from 'react'
+import React, {useState, useContext} from 'react'
+import {Context} from '../Context'
+//need to import useContext to use the data that is found there 
 
 function Image({className, img}) {
+	//keep track of hover over the images
+	const [hover, setHover] = useState(false)
+	const {toggleFave} = useContext(Context)
+
+
 	return(
-		<div className={`${className} image-container`}>
+		<div className={`${className} image-container`} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} >
+			{/* when img is hovered then display the heart and plus sign */}
+			 {hover && (
+        <div>
+          <i className="ri-heart-line favorite"></i>
+		  <i className="ri-add-circle-line cart" onClick={() => toggleFave(img.id)}></i>
+        </div>
+      )}
 			<img src={img.url} className="image-grid" alt="1"/>
 
 		</div>
@@ -10,3 +24,9 @@ function Image({className, img}) {
 }
 
 export default Image
+
+
+//onMouseEnter={() => setHover(true)}
+//onMouseLeave={() => setHover(false)}
+//we place both in the div so that when we enter it setHover==true 
+//and the opposite for when we leave the div

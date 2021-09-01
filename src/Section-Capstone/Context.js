@@ -18,10 +18,29 @@ function ContextProvider({ children }) {
 	}, [])
 	//console.log(allImgs)
 
+	//toggling the favourite option
+	//then map/searching for the matching id
+	//and making it the favourite
+	function toggleFave(id) {
+
+		const newImgArray = allImgs.map(img => {
+			if(img.id === id ){
+				console.log(id)
+				console.log(!img.isFave)
+				return {
+					...img,
+					isFave: !img.isFave
+				}
+			}
+			return img
+		})
+		setImgs(newImgArray)
+	}
+
 
 
 	return (
-		<Context.Provider value={{ allImgs }}>
+		<Context.Provider value={{ allImgs, toggleFave }}>
 			{children}
 		</Context.Provider>
 	)
@@ -31,3 +50,25 @@ export { ContextProvider, Context }
 
 
 //(props) == after destructuring ({children})
+
+//anything we want to get from context will happen through the value property
+//so pass it through the below so that other components can use the data
+//<Context.Provider value={{ allImgs }}>
+//{children}
+//</Context.Provider>
+
+
+
+//function toggleFave()...> explained
+/*
+the function is going to take in an id, the id is the id of an image
+in the array `allImgs`. The id is the one we want to modify which belongs to the
+one we clicked favorite on. 
+We create an updated array `newImgArray` and this new array will map/search over
+all the imgs `allImgs`. This will look at every img in the array. What we are looking
+for is to match the id of the img in `allImgs` to the id that was passed to the
+function. If we find matching ids then we want to return all the properties of the img (...img)
+and we want the isFave property to be the opposite of what it currently is.
+So you can only like or dislike once but someone else can change the like.
+
+*/
