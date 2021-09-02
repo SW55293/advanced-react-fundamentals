@@ -9,7 +9,7 @@ function ContextProvider({ children }) {
 	const url = "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
 	
 	useEffect(() => {
-		//get the data from api(fetch images)
+		//get the data from the api(fetch images)
 		fetch(url)
 			.then(response => response.json())
 			//save the data to state
