@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { Context } from '../Context'
 //need to import useContext to use the data that is found there 
-//<i className="ri-heart-line favorite"></i> : <i className="ri-heart-fill favorite"></i>
+import PropTypes from 'prop-types'
 
 function Image({ className, img }) {
 	//keep track of hover over the images
@@ -31,6 +31,15 @@ function Image({ className, img }) {
 
 		</div>
 	)
+}
+//you should always try and set prop types for your components that are receiving props
+Image.propType = {
+	className: PropTypes.string,
+	img: PropTypes.shape({
+		id: PropTypes.string.isRequired,
+		url: PropTypes.string.isRequired,
+		isFave: PropTypes.bool
+	}) 
 }
 
 export default Image
