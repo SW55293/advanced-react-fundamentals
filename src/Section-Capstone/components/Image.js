@@ -13,7 +13,7 @@ function Image({ className, img }) {
 		if (img.isFave) {
 			return <i className="ri-heart-fill favorite" onClick={() => toggleFave(img.id)}></i>
 		} else if (hover) {
-			return <i className="ri-add-circle-line cart" onClick={() => toggleFave(img.id)}></i>
+			return <i className="ri-heart-line favorite" onClick={() => toggleFave(img.id)}></i>
 		}
 	}
 
