@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 function Image({ className, img }) {
 	//keep track of hover over the images
 	const [hover, setHover] = useState(false)
-	const { toggleFave, addToCart, cartItems } = useContext(Context)
+	const { toggleFave, addToCart, cartItems, removeFromCart } = useContext(Context)
 
 	// this is the function that deals with all the heart icon logic
 	function heartIcon() {
@@ -21,10 +21,10 @@ function Image({ className, img }) {
 		//incart.. explanation
 		//"cartItems.some" will look at every image/item and will return true if any image/item in the array
 		//has the id thats equal to the current img id 
-		
+
 		const inCart = cartItems.some(everyImg => everyImg.id === img.id)
 		if(inCart) {
-			return <i className="ri-shopping-cart-fill cart"></i>
+			return <i className="ri-shopping-cart-fill cart" onClick={() => removeFromCart(img.id)}></i>
 		} else if (hover) {
 			return <i className="ri-add-circle-line cart" onClick={() => addToCart(img)}></i>
 		}
