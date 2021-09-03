@@ -6,9 +6,9 @@ import PropTypes from 'prop-types'
 function Image({ className, img }) {
 	//keep track of hover over the images
 	const [hover, setHover] = useState(false)
-	const { toggleFave } = useContext(Context)
+	const { toggleFave, addToCart, cartItems } = useContext(Context)
 
-// this is the function that deals with all the heart icon logic
+	// this is the function that deals with all the heart icon logic
 	function heartIcon() {
 		if (img.isFave) {
 			return <i className="ri-heart-fill favorite" onClick={() => toggleFave(img.id)}></i>
@@ -17,17 +17,35 @@ function Image({ className, img }) {
 		}
 	}
 
+	function cartIcon() {
+		//incart.. explanation
+		//"cartItems.some" will look at every image/item and will return true if any image/item in the array
+		//has the id thats equal to the current img id 
+		
+		const inCart = cartItems.some(everyImg => everyImg.id === img.id)
+		if(inCart) {
+			return <i className="ri-shopping-cart-fill cart"></i>
+		} else if (hover) {
+			return <i className="ri-add-circle-line cart" onClick={() => addToCart(img)}></i>
+		}
+	}
+
 	return (
 		<div className={`${className} image-container`} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} >
+			{/* The hover portion was here first
 			{hover && (
 				<div>
-					<i className="ri-add-circle-line cart" onClick={() => toggleFave(img.id)}></i>
+					<i className="ri-add-circle-line cart" onClick={() => addToCart(img)}></i>
 				</div>
-			)}
-			{/* call the heartIcon function */}
-			{heartIcon()}
+			)} 
+			*/}
+
 
 			<img src={img.url} className="image-grid" alt="1" />
+
+			{/* call the heartIcon function */}
+			{heartIcon()}
+			{cartIcon()}
 
 		</div>
 	)
@@ -39,7 +57,7 @@ Image.propType = {
 		id: PropTypes.string.isRequired,
 		url: PropTypes.string.isRequired,
 		isFave: PropTypes.bool
-	}) 
+	})
 }
 
 export default Image
