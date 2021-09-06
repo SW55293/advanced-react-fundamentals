@@ -3,6 +3,7 @@ import {Context} from '../Context'
 
 function CartItem({item}) {
 
+	//brought in functions from the context page to use here
 	const {removeFromCart} = useContext(Context)
 
 

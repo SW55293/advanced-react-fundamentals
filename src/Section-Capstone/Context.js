@@ -45,13 +45,18 @@ function ContextProvider({ children }) {
 	function removeFromCart(id) {
 		setCartItems(prevImgs => prevImgs.filter(image => image.id !== id))
 	}
-console.log(cartItems)
+	//console.log(cartItems)
+	
+	//remove all items from cart once place order has been clicked
+	function emptyCart() {
+		setCartItems([])
+	}
 	
 
 
 
 	return (
-		<Context.Provider value={{ allImgs, toggleFave, addToCart, cartItems, removeFromCart }}>
+		<Context.Provider value={{ allImgs, toggleFave, addToCart, cartItems, removeFromCart, emptyCart }}>
 			{children}
 		</Context.Provider>
 	)
