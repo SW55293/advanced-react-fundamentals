@@ -3,6 +3,9 @@ import { Context } from '../Context'
 //need to import useContext to use the data that is found there 
 import PropTypes from 'prop-types'
 
+//you can use the custom hover hook here just import it and replace with the same constants as cart item page
+//import useHover from '../customHook/useHover'
+
 function Image({ className, img }) {
 	//keep track of hover over the images
 	const [hover, setHover] = useState(false)
