@@ -34,9 +34,11 @@ function Cart() {
 
 			<p className="total-cost">Total: {totalCost}</p>
 
-			<div className="order-button">
-				<button onClick={Ordering}>{placeOrder}</button>
-			</div>
+			{/* this below will show the h3 if no items are in your cart */}
+			{ cartItems.length > 0 ? 
+				<div className="order-button">  <button onClick={Ordering}>{placeOrder}</button> </div> :
+				<h3>You have no items in your cart</h3>
+			}
         </main>
     )
 }
